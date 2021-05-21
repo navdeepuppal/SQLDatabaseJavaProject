@@ -150,7 +150,7 @@ public static String username;
       boolean f = false;
         try {
             Class.forName("com.mysql.jdbc.Driver");  
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/navi",username,password);
+            Connection con=DriverManager.getConnection("jdbc:mysql://192.168.29.195:3306/navi",username,password);
             con.close(); 
             f = true;
         }

@@ -47,7 +47,7 @@ public class database extends javax.swing.JFrame {
         
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/navi", NewJFrame.username, NewJFrame.password);
+            con = DriverManager.getConnection("jdbc:mysql://192.168.29.195:3306/navi", NewJFrame.username, NewJFrame.password);
             stmt = con.createStatement();
         } catch (Exception e) {
 
