@@ -29,7 +29,7 @@ public class database extends javax.swing.JFrame {
 	 */
 	public database() {
 		initComponents();
-System.out.println("change occured !");
+System.out.println("change");
 		jTextField1.setVisible(false);
 		jButton3.setVisible(false);
 
