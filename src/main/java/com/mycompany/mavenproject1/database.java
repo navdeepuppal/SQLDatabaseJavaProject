@@ -7,6 +7,10 @@ package com.mycompany.mavenproject1;
 
 import static com.mycompany.mavenproject1.NewJFrame.password;
 import static com.mycompany.mavenproject1.NewJFrame.username;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -69,8 +73,6 @@ public class database extends javax.swing.JFrame {
 		jScrollPane2 = new javax.swing.JScrollPane();
 		jTextArea1 = new javax.swing.JTextArea();
 		jButton2 = new javax.swing.JButton();
-		jScrollPane1 = new javax.swing.JScrollPane();
-		jTable1 = new javax.swing.JTable();
 		jButton3 = new javax.swing.JButton();
 		jTextField1 = new javax.swing.JTextField();
 		jButton4 = new javax.swing.JButton();
@@ -122,16 +124,6 @@ public class database extends javax.swing.JFrame {
 			}
 		});
 		getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, 110, 50));
-
-		jTable1.setModel(new javax.swing.table.DefaultTableModel(
-				tableValues = new Object[][] { { "", "", "", "" }, { "", "", "", "" }, { "", "", "", "" },
-						{ null, null, null, null } },
-				tableColumns = new String[] { "Title 1", "Title 2", "Title 3", "Title 4" }));
-		jTable1.setEditingColumn(4);
-		jTable1.setEditingRow(4);
-		jScrollPane1.setViewportView(jTable1);
-
-		getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 340, 420, 160));
 
 		jButton3.setBackground(new java.awt.Color(255, 51, 0));
 		jButton3.setFont(new java.awt.Font("Comic Sans MS", 1, 15)); // NOI18N
@@ -261,22 +253,85 @@ public class database extends javax.swing.JFrame {
 			while (rs.next()) {
 				System.out.println(
 						rs.getString(1) + "  " + rs.getString(2) + "  " + rs.getString(3) + "  " + rs.getString(4));
-
+				
+				
+				
+				
+				
+				
+				
 				jTextArea1.setText(jTextArea1.getText() + rs.getString(1) + "  " + rs.getString(2) + "  "
 						+ rs.getString(3) + "  " + rs.getString(4) + "\n");
 				for (int j = 0; j < tableValues.length; j++) {
 					tableValues[i][j] = rs.getString(j + 1);
 				}
 				i++;
+				
+				
+				
+				
 			}
+			
+			
+			
+			
 
 		} catch (Exception e) {
 			System.out.println(e);
 		}
+		String indexfile = jTextArea1.getText();
 
-		String data[][] = { { "101", "Amit", "670000" }, { "102", "Jai", "780000" }, { "101", "Sachin", "700000" } };
-		String column[] = { "ID", "NAME", "SALARY" };
-		jTable1 = new javax.swing.JTable(data, column);
+		
+		
+		
+		try {
+		      FileWriter myWriter = new FileWriter("index.html");
+		      
+			myWriter.write("<!DOCTYPE html>\r\n"
+		      		+ "<html lang=\"en\">\r\n"
+		      		+ "<head>\r\n"
+		      		+ "    <meta charset=\"UTF-8\">\r\n"
+		      		+ "    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n"
+		      		+ "    <meta name=\"viewport\" content=\"width=\r\n"
+		      		+ "    \r\n"
+		      		+ "    \r\n"
+		      		+ "    , initial-scale=1.0\">\r\n"
+		      		+ "    <title>Document</title>\r\n"
+		      		+ "</head>\r\n"
+		      		+ "<body>\r\n"
+		      		+ "    \r\n"
+		      		+ "\r\n"
+		      		+ "<h1> See ! we made changes from github & changes are reflected here automatically :) </h1>\r\n"
+		      		+ "\r\n"
+		      		+ "<marquee> <font color = \"Red\" > SQL Database </font> </marquee>\r\n"
+		      		+ "\r\n"
+		      		+ "\r\n"
+		      		+ "\r\n"
+		      		+ "<br>\r\n"
+		      		+ "<br> \r\n"
+		      		+ "This is database record triggered when SHOW button is clicked in JAVA Maven Project \r\n \n \n " 		      		
+		      		+ indexfile 
+		      		+ "\r\n"
+		      		+ "\r\n"
+		      		+ "\r\n"
+		      		+ "\r\n"
+		      		+ "\r\n"
+		      		+ "    \r\n"
+		      		+ "</body>\r\n"
+		      		+ "\r\n"
+		      		+ "\r\n"
+		      		+ "</html>");
+		      myWriter.close();
+		      System.out.println("Successfully wrote to the file.");
+		    } catch (IOException e) {
+		      System.out.println("An error occurred.");
+		      e.printStackTrace();
+		    }
+		
+		
+		//String data[][] = { { "101", "Amit", "670000" }, { "102", "Jai", "780000" }, { "101", "Sachin", "700000" } };
+		//String column[] = { "ID", "NAME", "SALARY" };
+		//jTable1 = new javax.swing.JTable(data, column);
 
 	}// GEN-LAST:event_jButton2ActionPerformed
 
@@ -437,9 +492,7 @@ public class database extends javax.swing.JFrame {
 	private javax.swing.JLabel jLabel20;
 	private javax.swing.JLabel jLabel5;
 	private javax.swing.JLabel jLabel6;
-	private javax.swing.JScrollPane jScrollPane1;
 	private javax.swing.JScrollPane jScrollPane2;
-	public javax.swing.JTable jTable1;
 	private javax.swing.JTextArea jTextArea1;
 	private javax.swing.JTextField jTextField1;
 	private javax.swing.JTextField jTextField2;
