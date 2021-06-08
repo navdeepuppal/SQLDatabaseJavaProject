@@ -20,12 +20,12 @@ public class Apptest {
     }
     public static void SignInWindow() 
     {
-       System.out.println("Sign_in Window is opening Successfully");
+       System.out.println("From AppTest : Sign_in Window is opening Successfully");
     }
     
     public static void SqlServer()
     {
-    	System.out.println("SQL Server too running successfully ! ");
+    	System.out.println("From AppTest : SQL Server too running successfully ! ");
     }
     
     public static void indexfile()
