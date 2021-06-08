@@ -271,6 +271,9 @@ public class database extends javax.swing.JFrame {
 		
 		
 		try {
+			
+			
+
 		      FileWriter myWriter = new FileWriter("index.html");
 		      
 			myWriter.write("<!DOCTYPE html>\r\n"
@@ -352,9 +355,11 @@ public class database extends javax.swing.JFrame {
 					+ "</html>");
 		      myWriter.close();
 		      System.out.println("Successfully wrote to the file.");
+		      UnitTest.indexfile();
 		    } catch (IOException e) {
-		      System.out.println("An error occurred.");
+		      System.out.println("Error: Index File not Updated !");
 		      e.printStackTrace();
+		      
 		    }
 		
 		

@@ -25,7 +25,14 @@ public class NewJFrame extends javax.swing.JFrame {
 	 */
 	public NewJFrame() {
 		initComponents();
-
+		try {
+			
+			UnitTest.SignInWindow();
+		} catch (Exception e)
+		{
+		
+			System.out.println("SignIn Window Not Opening");
+		}
 	}
 
 	/**
@@ -142,6 +149,8 @@ public class NewJFrame extends javax.swing.JFrame {
 	private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton5ActionPerformed
 		// TODO add your handling code here:
 
+	
+	
 		// TODO add your handling code here:
 		username = jTextField1.getText();
 		password = String.valueOf(jPasswordField1.getPassword());
@@ -149,9 +158,17 @@ public class NewJFrame extends javax.swing.JFrame {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://192.168.29.195:3306/navi", username, password);
+			UnitTest.DatabaseWindow();
 			con.close();
 			f = true;
 		} catch (Exception e) {
+			
+			
+			
+			
+			
+				System.out.println("Database Window Not Opening");
+			
 			jTextField1.setText("");
 			jPasswordField1.setText("");
 			System.out.println(e);
@@ -163,25 +180,24 @@ public class NewJFrame extends javax.swing.JFrame {
 			this.dispose();
 			database oo = new database();
 			oo.setVisible(true);
-
+			
 			jTextField4.setVisible(false);
 
 			this.dispose();
 		}
+		
+
+
+
 	}// GEN-LAST:event_jButton5ActionPerformed
 
 	/**
 	 * @param args the command line arguments
 	 */
 	public static void main(String args[]) {
-		/* Set the Nimbus look and feel */
-		// <editor-fold defaultstate="collapsed" desc=" Look and feel setting code
-		// (optional) ">
-		/*
-		 * If Nimbus (introduced in Java SE 6) is not available, stay with the default
-		 * look and feel. For details see
-		 * http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
-		 */
+		
+		
+		
 		try {
 			for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
 				if ("Nimbus".equals(info.getName())) {
@@ -198,9 +214,7 @@ public class NewJFrame extends javax.swing.JFrame {
 		} catch (javax.swing.UnsupportedLookAndFeelException ex) {
 			java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 		}
-		// </editor-fold>
-
-		/* Create and display the form */
+		
 		java.awt.EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				new NewJFrame().setVisible(true);
@@ -208,7 +222,7 @@ public class NewJFrame extends javax.swing.JFrame {
 		});
 	}
 
-	// Variables declaration - do not modify//GEN-BEGIN:variables
+
 	private javax.swing.JButton jButton5;
 	private javax.swing.JLabel jLabel17;
 	private javax.swing.JLabel jLabel18;
