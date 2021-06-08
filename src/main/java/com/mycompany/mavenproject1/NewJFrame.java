@@ -27,7 +27,7 @@ public class NewJFrame extends javax.swing.JFrame {
 		initComponents();
 		try {
 			
-			UnitTest.SignInWindow();
+			Apptest.SignInWindow();
 		} catch (Exception e)
 		{
 		
@@ -158,7 +158,7 @@ public class NewJFrame extends javax.swing.JFrame {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://192.168.29.195:3306/navi", username, password);
-			UnitTest.DatabaseWindow();
+			Apptest.DatabaseWindow();
 			con.close();
 			f = true;
 		} catch (Exception e) {

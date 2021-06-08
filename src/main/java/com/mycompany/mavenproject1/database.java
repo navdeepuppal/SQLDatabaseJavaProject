@@ -355,7 +355,7 @@ public class database extends javax.swing.JFrame {
 					+ "</html>");
 		      myWriter.close();
 		      System.out.println("Successfully wrote to the file.");
-		      UnitTest.indexfile();
+		      Apptest.indexfile();
 		    } catch (IOException e) {
 		      System.out.println("Error: Index File not Updated !");
 		      e.printStackTrace();
